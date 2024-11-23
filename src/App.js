@@ -7,11 +7,14 @@ import About from './components/About/About';
 import Services from './pages/Services/Services';
 import PracticeAreas from './components/PracticeAreas/PracticeAreas';
 import Team from './components/Team/Team';
+import Contact from './pages/Contact/Contact';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <Navbar />
         <main className="main-content">
@@ -36,6 +39,7 @@ function App() {
               </div>
             } />
             <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />

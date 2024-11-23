@@ -16,6 +16,10 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
+
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-inner">
@@ -32,22 +36,40 @@ const Navbar = () => {
         </motion.div>
 
         <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
+          <Link 
+            to="/" 
+            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+          >
             Home
           </Link>
-          <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>
+          <Link 
+            to="/about" 
+            className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+          >
             About
           </Link>
-          <Link to="/services" className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}>
+          <Link 
+            to="/services" 
+            className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}
+          >
             Services
           </Link>
-          <Link to="/practice" className={`nav-link ${location.pathname === '/practice' ? 'active' : ''}`}>
+          <Link 
+            to="/practice" 
+            className={`nav-link ${location.pathname === '/practice' ? 'active' : ''}`}
+          >
             Practice Areas
           </Link>
-          <Link to="/team" className={`nav-link ${location.pathname === '/team' ? 'active' : ''}`}>
+          <Link 
+            to="/team" 
+            className={`nav-link ${location.pathname === '/team' ? 'active' : ''}`}
+          >
             Our Team
           </Link>
-          <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>
+          <Link 
+            to="/contact" 
+            className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
+          >
             Contact
           </Link>
           <motion.button 
