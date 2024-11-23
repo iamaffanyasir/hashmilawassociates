@@ -1,0 +1,47 @@
+.service-process {
+  padding: 100px 0;
+  background: var(--dark-200);
+}
+
+.process-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.process-container h2 {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.process-step {
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.step-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.process-step h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.process-step p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+} 

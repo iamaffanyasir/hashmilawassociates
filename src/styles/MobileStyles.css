@@ -1,0 +1,191 @@
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 120px 0 60px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-text h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    padding: 30px 20px;
+    margin: 30px 20px;
+  }
+
+  /* About Section */
+  .about-content {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  /* Practice Areas */
+  .practices-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .practice-card {
+    margin: 0 20px;
+  }
+
+  .practice-cta {
+    margin: 40px 20px;
+    padding: 30px 20px;
+  }
+
+  /* Team Section */
+  .team-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .team-card {
+    margin: 0 20px;
+  }
+
+  .expertise-areas {
+    flex-direction: column;
+  }
+
+  .areas-grid {
+    justify-content: center;
+  }
+
+  /* Navigation */
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: var(--dark-100);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 40px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+    padding: 15px 0;
+  }
+
+  /* Footer */
+  .footer-content {
+    padding: 40px 20px;
+  }
+
+  .footer-links-section {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .practices-grid,
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+/* Common Mobile Improvements */
+@media (max-width: 1024px) {
+  .glass-effect {
+    backdrop-filter: blur(8px);
+  }
+
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .container-padding {
+    padding: 0 20px;
+  }
+
+  /* Improve touch targets */
+  button,
+  .nav-link,
+  .footer-link {
+    min-height: 44px;
+    padding: 12px 20px;
+  }
+
+  /* Improve text readability */
+  p {
+    line-height: 1.6;
+  }
+
+  /* Better spacing for mobile */
+  .section-gap {
+    margin-bottom: 40px;
+  }
+
+  /* Optimize images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Mobile Animation Optimizations */
+@media (max-width: 768px) {
+  .motion-safe {
+    transition: none;
+    animation: none;
+  }
+
+  .reduce-motion {
+    transform: none !important;
+    transition: none !important;
+  }
+} 

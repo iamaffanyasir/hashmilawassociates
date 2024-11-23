@@ -1,0 +1,179 @@
+.practice-areas {
+  padding: 100px 0;
+  background-color: var(--dark-100);
+  position: relative;
+  overflow: hidden;
+}
+
+.practice-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.practice-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.practice-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #fff, #ccc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.practice-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+.practices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.practice-card {
+  padding: 35px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.practice-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.practice-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.practice-card p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+.features-list {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.features-list li {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.feature-bullet {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.learn-more-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.learn-more-btn .arrow {
+  transition: transform 0.3s ease;
+}
+
+.learn-more-btn:hover .arrow {
+  transform: translateX(5px);
+}
+
+.practice-cta {
+  text-align: center;
+  padding: 60px 40px;
+  border-radius: 20px;
+  margin-top: 60px;
+}
+
+.practice-cta h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.practice-cta p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.consultation-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.consultation-btn:hover {
+  background: #6B21A8;
+}
+
+@media (max-width: 768px) {
+  .practice-areas {
+    padding: 60px 0;
+  }
+
+  .practice-header h2 {
+    font-size: 2rem;
+  }
+
+  .practice-card {
+    padding: 25px;
+  }
+
+  .practice-cta {
+    padding: 40px 20px;
+  }
+
+  .practice-cta h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Glass effect hover enhancement */
+.practice-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(16, 185, 129, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.practice-card:hover::before {
+  opacity: 1;
+} 
