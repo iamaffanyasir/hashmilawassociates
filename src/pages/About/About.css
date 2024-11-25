@@ -1,0 +1,568 @@
+.about-page {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.about-hero {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(21, 19, 32, 0.9), rgba(21, 19, 32, 0.9)),
+              url('../../assets/images/law-office.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #fff, #ccc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about-hero p {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Intro Section */
+.about-intro {
+  padding: 80px 0;
+}
+
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.intro-content {
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.intro-content p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* Milestones Section */
+.milestones-section {
+  padding: 80px 0;
+}
+
+.milestones-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  background: linear-gradient(135deg, #fff, #ccc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.milestones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.milestone-card {
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.milestone-card:hover {
+  transform: translateY(-5px);
+}
+
+.milestone-card .year {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.milestone-card h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.milestone-card p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* Values Section */
+.values-section {
+  padding: 80px 0;
+}
+
+.values-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.value-card {
+  padding: 35px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+}
+
+.value-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.value-card h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.value-card p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* Expertise Section */
+.expertise-section {
+  padding: 80px 0;
+}
+
+.expertise-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  background: linear-gradient(135deg, #fff, #ccc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.expertise-card {
+  padding: 35px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.expertise-card:hover {
+  transform: translateY(-5px);
+}
+
+.expertise-card h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.expertise-card ul {
+  list-style: none;
+}
+
+.expertise-card ul li {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.expertise-card ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 60px 0;
+}
+
+.cta-content {
+  text-align: center;
+  padding: 60px 40px;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.cta-content p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #6B21A8;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-content,
+  .milestone-card,
+  .value-card,
+  .expertise-card {
+    padding: 25px;
+  }
+
+  .intro-content h2,
+  .milestones-section h2,
+  .values-section h2,
+  .expertise-section h2,
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+
+  .cta-content {
+    padding: 40px 20px;
+  }
+}
+
+/* Achievements Section */
+.achievements-section {
+  padding: 80px 0;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.achievement-card {
+  padding: 35px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+}
+
+.achievement-number {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-weight: bold;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.achievement-card h4 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.achievement-card p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* Why Choose Us Section */
+.why-choose-section {
+  padding: 80px 0;
+}
+
+.why-choose-content {
+  padding: 50px;
+  border-radius: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.why-choose-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.why-choose-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.why-choose-list li {
+  color: rgba(255, 255, 255, 0.8);
+  padding-left: 25px;
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.why-choose-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+/* Locations Section */
+.locations-section {
+  padding: 80px 0;
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.location-card {
+  padding: 35px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+}
+
+.location-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.location-card h3 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.location-card p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* Team Overview Section */
+.team-overview-section {
+  padding: 80px 0;
+}
+
+.team-overview-content {
+  padding: 60px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.team-overview-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.team-overview-text p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.team-cta-button {
+  padding: 15px 30px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.team-cta-button:hover {
+  background: #6B21A8;
+  transform: translateY(-2px);
+}
+
+/* Enhanced CTA Section */
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.cta-button.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.cta-button.secondary {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: white;
+}
+
+.cta-button.primary:hover {
+  background: #6B21A8;
+}
+
+.cta-button.secondary:hover {
+  background: rgba(124, 58, 237, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .achievements-grid,
+  .why-choose-list {
+    grid-template-columns: 1fr;
+  }
+
+  .why-choose-content,
+  .team-overview-content {
+    padding: 30px 20px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .achievement-number {
+    font-size: 2.5rem;
+  }
+
+  .why-choose-text h2,
+  .team-overview-text h2 {
+    font-size: 2rem;
+  }
+
+  .location-card {
+    padding: 25px;
+  }
+}
+
+/* Animation Enhancements */
+.achievement-card,
+.location-card,
+.why-choose-list li {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glass Effect Enhancements */
+.achievement-card,
+.location-card,
+.why-choose-content,
+.team-overview-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card::before,
+.location-card::before,
+.why-choose-content::before,
+.team-overview-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.achievement-card:hover::before,
+.location-card:hover::before {
+  opacity: 1;
+} 

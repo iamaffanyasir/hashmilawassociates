@@ -1,0 +1,60 @@
+.team-page {
+  min-height: 100vh;
+}
+
+.join-team-section {
+  padding: 80px 0;
+}
+
+.team-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.join-team-content {
+  text-align: center;
+  padding: 60px 40px;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.join-team-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.join-team-content p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.join-team-btn {
+  padding: 15px 30px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.join-team-btn:hover {
+  background: #6B21A8;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .join-team-content {
+    padding: 30px 20px;
+  }
+
+  .join-team-content h2 {
+    font-size: 2rem;
+  }
+} 

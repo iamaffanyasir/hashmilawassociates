@@ -1,11 +1,7 @@
 .footer {
   background-color: var(--dark-100);
   color: #fff;
-  position: relative;
-}
-
-.footer-top {
-  padding: 80px 0 40px;
+  padding: 80px 0 0 0;
   position: relative;
 }
 
@@ -15,10 +11,11 @@
   padding: 0 2rem;
 }
 
-.footer-main-content {
+.footer-main {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 60px;
+  margin-bottom: 40px;
 }
 
 .footer-brand h2 {
@@ -134,76 +131,12 @@
   font-size: 0.9rem;
 }
 
-.footer-offices {
-  background: rgba(255, 255, 255, 0.02);
-  padding: 60px 0;
-  margin-top: 40px;
-}
-
-.offices-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.offices-content h3 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 40px;
-  color: #fff;
-}
-
-.offices-grid {
-  display: grid;
-  gap: 40px;
-}
-
-.main-offices,
-.branch-offices {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.office-card {
-  padding: 25px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.office-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.office-card h4 {
-  color: var(--primary);
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-}
-
-.office-card p {
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
-  margin-bottom: 5px;
-}
-
-.office-card .city {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.9rem;
-}
-
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 20px 0;
 }
 
 .footer-bottom-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -235,7 +168,7 @@
 }
 
 @media (max-width: 1024px) {
-  .footer-main-content {
+  .footer-main {
     grid-template-columns: 1fr;
     gap: 40px;
   }
@@ -246,20 +179,11 @@
 }
 
 @media (max-width: 768px) {
-  .footer-top {
-    padding: 60px 0 30px;
+  .footer {
+    padding-top: 60px;
   }
 
   .footer-links-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .offices-grid {
-    gap: 30px;
-  }
-
-  .main-offices,
-  .branch-offices {
     grid-template-columns: 1fr;
   }
 

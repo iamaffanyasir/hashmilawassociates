@@ -3,10 +3,13 @@ import './App.css';
 import './styles/MobileStyles.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero/Hero';
-import About from './components/About/About';
+import HomeAbout from './components/About/About';
+import About from './pages/About/About';
 import Services from './pages/Services/Services';
-import PracticeAreas from './components/PracticeAreas/PracticeAreas';
-import Team from './components/Team/Team';
+import HomePracticeAreas from './components/PracticeAreas/PracticeAreas';
+import PracticeAreas from './pages/PracticeAreas/PracticeAreas';
+import HomeTeam from './components/Team/Team';
+import Team from './pages/Team/Team';
 import Contact from './pages/Contact/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
@@ -26,19 +29,22 @@ function App() {
                 </section>
                 <div className="section-divider" />
                 <section className="section-dark">
-                  <About />
+                  <HomeAbout />
                 </section>
                 <div className="section-divider" />
                 <section className="section-light">
-                  <PracticeAreas />
+                  <HomePracticeAreas />
                 </section>
                 <div className="section-divider" />
                 <section className="section-dark">
-                  <Team />
+                  <HomeTeam />
                 </section>
               </div>
             } />
+            <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/practice" element={<PracticeAreas />} />
+            <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
