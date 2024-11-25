@@ -1,123 +1,520 @@
-/* Mobile Styles */
+/* Mobile Styles for Homepage */
 @media (max-width: 768px) {
   /* Hero Section */
   .hero {
     height: auto;
     min-height: 100vh;
-    padding: 120px 0 60px;
+    padding: 200px 0 60px;
+    margin-top: 0;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(21, 19, 32, 0.9), rgba(21, 19, 32, 0.9)),
+                url('../assets/images/law-office.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.1), transparent 50%),
+                radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.1), transparent 50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-text {
+    text-align: center;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 
   .hero-text h1 {
-    font-size: 2.5rem;
-    text-align: center;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 0;
+    padding-top: 0;
+    background: linear-gradient(135deg, #fff, #ccc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .hero-text h2 {
-    font-size: 1.2rem;
-    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    color: var(--primary);
+    letter-spacing: 2px;
   }
 
   .hero-text p {
-    font-size: 1rem;
-    text-align: center;
-    padding: 0 20px;
+    font-size: 1.1rem;
+    padding: 0 15px;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
   }
 
   .hero-buttons {
     flex-direction: column;
     gap: 15px;
     align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
   }
 
+  .hero-buttons button {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+  }
+
+  .hero-buttons button:last-child {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+  }
+
+  /* Hide stats box on mobile */
   .hero-stats {
-    flex-direction: column;
-    padding: 30px 20px;
-    margin: 30px 20px;
+    display: none;
   }
 
-  /* About Section */
+  /* About Section Improvements */
+  .about {
+    padding: 60px 0;
+    overflow: hidden;
+  }
+
+  .about-container {
+    padding: 0 20px;
+  }
+
+  .about-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .about-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+
   .about-content {
     grid-template-columns: 1fr;
-    padding: 0 20px;
+    gap: 30px;
+    padding: 0;
   }
 
   .about-text {
     text-align: center;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    margin: 0;
   }
 
-  .about-features {
+  .about-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff, #ccc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 25px;
+    padding: 0 10px;
+  }
+
+  .features-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 0;
   }
 
-  /* Practice Areas */
+  .feature-card {
+    padding: 25px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    text-align: left;
+    margin: 0;
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+    min-width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(124, 58, 237, 0.1);
+    border-radius: 10px;
+    color: var(--primary);
+    margin-top: 5px;
+  }
+
+  .feature-content {
+    flex: 1;
+  }
+
+  .feature-card h4 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .feature-card p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .learn-more-btn {
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .learn-more-btn:hover {
+    background: #6B21A8;
+  }
+
+  /* Stats container for About section */
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 25px;
+    margin: 30px 0;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .stat-item h3 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+
+  .stat-item p {
+    font-size: 0.9rem;
+  }
+
+  /* Practice Areas Section */
+  .practice-areas {
+    padding: 60px 0;
+  }
+
   .practices-grid {
     grid-template-columns: 1fr;
+    gap: 25px;
     padding: 0 20px;
   }
 
-  .practice-card {
-    margin: 0 20px;
-  }
-
-  .practice-cta {
-    margin: 40px 20px;
+  .area-card {
     padding: 30px 20px;
   }
 
+  .area-icon {
+    font-size: 2.5rem;
+  }
+
+  .area-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .services-list {
+    margin-bottom: 20px;
+  }
+
+  .services-list li {
+    font-size: 0.95rem;
+  }
+
   /* Team Section */
+  .team-section {
+    padding: 60px 0;
+  }
+
   .team-grid {
     grid-template-columns: 1fr;
+    gap: 25px;
     padding: 0 20px;
   }
 
   .team-card {
-    margin: 0 20px;
+    padding: 30px 20px;
+  }
+
+  .member-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .team-card h3 {
+    font-size: 1.5rem;
   }
 
   .expertise-areas {
     flex-direction: column;
+    gap: 10px;
   }
 
   .areas-grid {
     justify-content: center;
   }
 
-  /* Navigation */
+  /* Common Mobile Improvements */
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .container-padding {
+    padding: 0 20px;
+  }
+
+  /* Better touch targets */
+  button,
+  .nav-link,
+  .learn-more-btn,
+  .consultation-btn {
+    min-height: 48px;
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  /* Improved text readability */
+  p {
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  /* Better spacing */
+  .section-gap {
+    margin-bottom: 40px;
+  }
+
+  /* Glass effect optimization */
+  .glass-effect-light,
+  .glass-effect-dark {
+    backdrop-filter: blur(8px);
+  }
+
+  /* Animation optimization */
+  .motion-safe {
+    transition: none;
+    animation: none;
+  }
+
+  /* Card hover effects */
+  .area-card:hover,
+  .team-card:hover,
+  .feature-card:hover {
+    transform: none;
+  }
+
+  /* Navigation improvements */
   .nav-menu {
     position: fixed;
     top: 80px;
     left: -100%;
     width: 100%;
     height: calc(100vh - 80px);
-    background: var(--dark-100);
+    background: rgba(21, 19, 32, 0.98);
+    backdrop-filter: blur(12px);
+    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 40px;
-    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 15px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    overflow-y: auto;
   }
 
   .nav-menu.active {
     left: 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
   }
 
   .nav-link {
-    font-size: 1.2rem;
-    padding: 15px 0;
-  }
-
-  /* Footer */
-  .footer-content {
-    padding: 40px 20px;
-  }
-
-  .footer-links-section {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-bottom-content {
-    flex-direction: column;
+    width: 85%;
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
     text-align: center;
-    gap: 15px;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 5px 0;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .nav-menu.active .nav-link {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(0.1s * var(--index));
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--primary);
+    transform: translateY(-2px) scale(1.02);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.1);
+  }
+
+  .consultation-button {
+    width: 85%;
+    padding: 16px 20px;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white;
+    background: var(--primary);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .nav-menu.active .consultation-button {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+
+  .consultation-button:hover {
+    background: #6B21A8;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3);
+  }
+
+  /* Navbar background when menu is open */
+  .navbar.scrolled {
+    background-color: rgba(30, 27, 46, 0.98);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Menu overlay */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    backdrop-filter: blur(4px);
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Enhanced Hamburger Menu Animations */
+  .mobile-menu-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1100;
+    position: relative;
+  }
+
+  .mobile-menu-button span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  }
+
+  .mobile-menu-button.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .mobile-menu-button.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  .mobile-menu-button.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
   }
 }
 
@@ -135,57 +532,5 @@
   .about-content {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-  }
-}
-
-/* Common Mobile Improvements */
-@media (max-width: 1024px) {
-  .glass-effect {
-    backdrop-filter: blur(8px);
-  }
-
-  .section-padding {
-    padding: 60px 0;
-  }
-
-  .container-padding {
-    padding: 0 20px;
-  }
-
-  /* Improve touch targets */
-  button,
-  .nav-link,
-  .footer-link {
-    min-height: 44px;
-    padding: 12px 20px;
-  }
-
-  /* Improve text readability */
-  p {
-    line-height: 1.6;
-  }
-
-  /* Better spacing for mobile */
-  .section-gap {
-    margin-bottom: 40px;
-  }
-
-  /* Optimize images */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-/* Mobile Animation Optimizations */
-@media (max-width: 768px) {
-  .motion-safe {
-    transition: none;
-    animation: none;
-  }
-
-  .reduce-motion {
-    transform: none !important;
-    transition: none !important;
   }
 } 
