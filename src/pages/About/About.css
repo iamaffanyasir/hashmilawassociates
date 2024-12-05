@@ -4,127 +4,253 @@
 
 /* Hero Section */
 .about-hero {
-  height: 40vh;
+  min-height: 60vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  position: relative;
+  padding: 120px 20px;
   overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+              url('../../assets/images/law-office.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.about-hero::before {
-  content: '';
+.hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(rgba(21, 19, 32, 0.9), rgba(21, 19, 32, 0.9)),
-              url('../../assets/images/law-office.jpg');
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
+  background: radial-gradient(circle at center, 
+    rgba(0, 102, 204, 0.1) 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
 }
 
 .about-hero-content {
   position: relative;
   z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  padding: 0 20px;
 }
 
-.about-hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, #fff, #ccc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.hero-badge {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(0, 102, 204, 0.1);
+  border: 1px solid rgba(0, 102, 204, 0.3);
+  border-radius: 20px;
+  color: var(--primary);
+  font-size: 0.9rem;
+  margin-bottom: 30px;
 }
 
-.about-hero p {
+.about-hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.about-hero-content p {
   font-size: 1.3rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* Intro Section */
 .about-intro {
-  padding: 80px 0;
+  padding: 120px 0;
 }
 
 .about-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 20px;
 }
 
 .intro-content {
-  padding: 40px;
-  border-radius: 16px;
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 60px;
+  border-radius: 20px;
 }
 
-.intro-content h2 {
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.intro-text h2 {
   font-size: 2.5rem;
-  margin-bottom: 30px;
   color: #fff;
+  margin-bottom: 30px;
+  line-height: 1.2;
 }
 
-.intro-content p {
+.intro-text p {
   color: rgba(255, 255, 255, 0.8);
-  line-height: 1.8;
   font-size: 1.1rem;
-  margin-bottom: 20px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.intro-stats {
+  display: grid;
+  gap: 30px;
+}
+
+.stat-card {
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.stat-card p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Milestones Section */
 .milestones-section {
-  padding: 80px 0;
+  padding: 120px 0;
+  background: var(--section-darker);
 }
 
-.milestones-section h2 {
+.section-header {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  background: linear-gradient(135deg, #fff, #ccc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  margin-bottom: 80px;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(0, 102, 204, 0.1);
+  border: 1px solid rgba(0, 102, 204, 0.3);
+  border-radius: 20px;
+  color: var(--primary);
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.section-header h2 {
+  font-size: 2.8rem;
+  color: #fff;
+  line-height: 1.2;
 }
 
 .milestones-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
 }
 
 .milestone-card {
-  padding: 30px;
-  border-radius: 12px;
+  padding: 50px 40px;
+  border-radius: 20px;
   text-align: center;
-  transition: transform 0.3s ease;
+  background: rgba(0, 0, 0, 0.3);
 }
 
-.milestone-card:hover {
-  transform: translateY(-5px);
+.milestone-icon {
+  font-size: 3rem;
+  margin-bottom: 25px;
 }
 
-.milestone-card .year {
-  font-size: 2rem;
+.milestone-year {
+  font-size: 1.8rem;
   color: var(--primary);
   margin-bottom: 15px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .milestone-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: #fff;
   margin-bottom: 15px;
 }
 
 .milestone-card p {
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .milestones-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: 50vh;
+    padding: 80px 20px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .about-intro,
+  .milestones-section {
+    padding: 80px 0;
+  }
+
+  .intro-content {
+    padding: 30px;
+  }
+
+  .intro-text h2 {
+    font-size: 2rem;
+  }
+
+  .milestones-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .milestone-card {
+    padding: 40px 30px;
+  }
+
+  .section-header {
+    margin-bottom: 60px;
+  }
+
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
 }
 
 /* Values Section */

@@ -13,181 +13,154 @@ const Contact = () => {
 
   const offices = [
     {
-      title: "Supreme Court",
-      address: "Old Lawyers Chamber Supreme Court of India",
+      title: "Head Office",
+      address: "123 Legal Avenue, Sector 15",
       city: "New Delhi-110001",
-      icon: "🏛️"
+      phone: "+91 98765 43210",
+      email: "info@hashmilaw.com",
+      icon: "🏢"
     },
     {
-      title: "Delhi High Court",
-      address: "Delhi High Court Bar Association, Sher Shah Road",
-      city: "New Delhi-110053",
+      title: "Supreme Court",
+      address: "Chamber No. 456, Supreme Court",
+      city: "New Delhi-110001",
+      phone: "+91 98765 43211",
+      email: "sc@hashmilaw.com",
       icon: "⚖️"
     },
     {
-      title: "Patiala House",
-      address: "Patiala House Court Bar Association",
-      city: "New Delhi-110001",
-      icon: "🏢"
-    },
-    {
-      title: "Saket Court",
-      address: "Chamber No. 685 Lawyers Chamber, Saket Court",
-      city: "New Delhi",
+      title: "High Court",
+      address: "Chamber No. 789, High Court",
+      city: "New Delhi-110003",
+      phone: "+91 98765 43212",
+      email: "hc@hashmilaw.com",
       icon: "🏛️"
-    },
-    {
-      title: "Head Office",
-      address: "229-A Pocket-12, Jasola",
-      city: "New Delhi-110025",
-      icon: "🏢"
     }
   ];
-
-  const contactInfo = {
-    phones: [
-      { number: "+91 8588895750", type: "Primary" },
-      { number: "+91 9891224152", type: "WhatsApp" }
-    ],
-    emails: [
-      "Info@adalegal.co.in",
-      "hashmi.adil@adalegal.co.in",
-      "adv.adil.hashmi@gmail.com",
-      "hashmi.law.associats07@gmail.com"
-    ]
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission
-    console.log(formData);
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
   };
 
   return (
     <div className="contact-page">
-      <motion.div 
-        className="contact-hero section-dark"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="contact-hero-content">
-          <h1>Contact Us</h1>
-          <p>Get in touch with our legal experts for professional guidance</p>
-        </div>
-      </motion.div>
+      <section className="contact-hero section-dark">
+        <div className="hero-overlay"></div>
+        <motion.div 
+          className="contact-hero-content"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div 
+            className="hero-badge"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            Contact Us
+          </motion.div>
+          <h1>Get In Touch</h1>
+          <p>We're here to help with your legal needs</p>
+        </motion.div>
+      </section>
 
-      <section className="contact-content section-light">
+      <section className="contact-main section-light">
         <div className="contact-container">
           <div className="contact-grid">
             <motion.div 
-              className="contact-info-section glass-effect-light"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              className="contact-info glass-effect-light"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
             >
               <h2>Contact Information</h2>
+              <p>Get in touch with us for expert legal assistance</p>
               
-              <div className="contact-methods">
-                <div className="phones-section">
-                  <h3>Phone Numbers</h3>
-                  {contactInfo.phones.map((phone, index) => (
-                    <motion.div 
-                      key={index}
-                      className="phone-item"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 + (index * 0.1) }}
-                    >
-                      <i className={`fas ${phone.type === 'WhatsApp' ? 'fa-whatsapp' : 'fa-phone'}`}></i>
-                      <a href={`tel:${phone.number}`}>{phone.number}</a>
-                      <span className="phone-type">{phone.type}</span>
-                    </motion.div>
-                  ))}
+              <div className="contact-details">
+                <div className="contact-item">
+                  <span className="icon">📞</span>
+                  <div>
+                    <h3>Phone</h3>
+                    <p>+91 98765 43210</p>
+                    <p>+91 98765 43211</p>
+                  </div>
                 </div>
-
-                <div className="emails-section">
-                  <h3>Email Addresses</h3>
-                  {contactInfo.emails.map((email, index) => (
-                    <motion.div 
-                      key={index}
-                      className="email-item"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.5 + (index * 0.1) }}
-                    >
-                      <i className="fas fa-envelope"></i>
-                      <a href={`mailto:${email}`}>{email}</a>
-                    </motion.div>
-                  ))}
+                
+                <div className="contact-item">
+                  <span className="icon">✉️</span>
+                  <div>
+                    <h3>Email</h3>
+                    <p>info@hashmilaw.com</p>
+                    <p>support@hashmilaw.com</p>
+                  </div>
+                </div>
+                
+                <div className="contact-item">
+                  <span className="icon">⏰</span>
+                  <div>
+                    <h3>Working Hours</h3>
+                    <p>Monday - Saturday</p>
+                    <p>9:00 AM - 6:00 PM</p>
+                  </div>
                 </div>
               </div>
             </motion.div>
 
             <motion.div 
-              className="contact-form-section glass-effect-light"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              className="contact-form glass-effect-light"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
             >
               <h2>Send us a Message</h2>
-              <form onSubmit={handleSubmit} className="contact-form">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Your Phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="subject"
-                    placeholder="Subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="5"
-                  ></textarea>
+              <form onSubmit={handleSubmit}>
+                <div className="form-grid">
+                  <div className="form-group">
+                    <input 
+                      type="text" 
+                      placeholder="Your Name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input 
+                      type="email" 
+                      placeholder="Your Email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input 
+                      type="tel" 
+                      placeholder="Phone Number"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input 
+                      type="text" 
+                      placeholder="Subject"
+                      value={formData.subject}
+                      onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                      required
+                    />
+                  </div>
+                  <div className="form-group full-width">
+                    <textarea 
+                      placeholder="Your Message"
+                      value={formData.message}
+                      onChange={(e) => setFormData({...formData, message: e.target.value})}
+                      required
+                    ></textarea>
+                  </div>
                 </div>
                 <motion.button 
                   type="submit"
@@ -204,23 +177,35 @@ const Contact = () => {
       </section>
 
       <section className="offices-section section-dark">
-        <div className="offices-container">
-          <h2>Our Offices</h2>
+        <div className="contact-container">
+          <motion.div 
+            className="section-header"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="section-badge">Our Offices</span>
+            <h2>Visit Our Locations</h2>
+            <p>Find us at our convenient office locations</p>
+          </motion.div>
+
           <div className="offices-grid">
             {offices.map((office, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="office-card glass-effect-dark"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
+                whileHover={{ y: -10, transition: { duration: 0.2 } }}
               >
                 <div className="office-icon">{office.icon}</div>
                 <h3>{office.title}</h3>
-                <p>{office.address}</p>
+                <p className="address">{office.address}</p>
                 <p className="city">{office.city}</p>
+                <p className="phone">{office.phone}</p>
+                <p className="email">{office.email}</p>
               </motion.div>
             ))}
           </div>

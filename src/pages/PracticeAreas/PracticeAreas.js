@@ -3,198 +3,188 @@ import { motion } from 'framer-motion';
 import './PracticeAreas.css';
 
 const PracticeAreas = () => {
-  const processSteps = [
+  const practiceAreas = [
     {
-      number: "01",
-      title: "Initial Consultation",
-      description: "Free consultation to understand your requirements and objectives"
+      title: "NGO Registration",
+      description: "Complete assistance in registering NGOs under various acts",
+      icon: "🏛️",
+      services: [
+        "Society Registration",
+        "Trust Registration",
+        "Section 8 Company",
+        "FCRA Registration"
+      ]
     },
     {
-      number: "02",
-      title: "Documentation",
-      description: "Preparation and verification of all necessary documents"
+      title: "Tax & Compliance",
+      description: "Comprehensive tax and regulatory compliance services",
+      icon: "📊",
+      services: [
+        "12A Registration",
+        "80G Registration",
+        "Annual Compliance",
+        "Tax Returns Filing"
+      ]
     },
     {
-      number: "03",
-      title: "Registration",
-      description: "Filing and processing of registration applications"
+      title: "Legal Advisory",
+      description: "Expert legal consultation for NGOs and NPOs",
+      icon: "⚖️",
+      services: [
+        "Legal Consultation",
+        "Governance Structure",
+        "Policy Development",
+        "Risk Assessment"
+      ]
+    }
+  ];
+
+  const expertise = [
+    {
+      title: "Specialized Knowledge",
+      description: "Deep understanding of NGO/NPO legal framework",
+      icon: "🎯"
     },
     {
-      number: "04",
-      title: "Compliance Setup",
-      description: "Establishing compliance frameworks and governance structures"
+      title: "Proven Track Record",
+      description: "Successfully registered 500+ NGOs across India",
+      icon: "📈"
+    },
+    {
+      title: "End-to-End Support",
+      description: "Complete assistance from registration to compliance",
+      icon: "🤝"
     }
   ];
 
   return (
     <div className="practice-areas-page">
-      <motion.section 
-        className="practice-hero section-dark"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="practice-hero-content">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+      <section className="practice-hero section-dark">
+        <div className="hero-overlay"></div>
+        <motion.div 
+          className="practice-hero-content"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div 
+            className="hero-badge"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Practice Areas
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
-            Specialized Legal Services for NGOs and Non-Profit Organizations
-          </motion.p>
-          <motion.button
-            className="hero-cta-btn"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Started
-          </motion.button>
-        </div>
-      </motion.section>
-
-      <section className="expertise-section section-light">
-        <div className="practice-container">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Our Expertise
-          </motion.h2>
-          <div className="expertise-grid">
-            <motion.div
-              className="expertise-card glass-effect-light"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            >
-              <div className="expertise-icon">🏛️</div>
-              <h3>NGO Registration</h3>
-              <p>Complete assistance in NGO registration under various acts including Societies Act, Trust Act, and Section 8 Company registration.</p>
-              <div className="expertise-features">
-                <span>Society Registration</span>
-                <span>Trust Registration</span>
-                <span>Section 8 Company</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="expertise-card glass-effect-light"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            >
-              <div className="expertise-icon">📄</div>
-              <h3>Legal Documentation</h3>
-              <p>Expert assistance in preparing and managing all legal documents required for NGO operations and compliance.</p>
-              <div className="expertise-features">
-                <span>Memorandum</span>
-                <span>Articles</span>
-                <span>Bylaws</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="expertise-card glass-effect-light"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            >
-              <div className="expertise-icon">⚖️</div>
-              <h3>Tax & Compliance</h3>
-              <p>Comprehensive tax and compliance services including 12A, 80G registration, and annual compliance management.</p>
-              <div className="expertise-features">
-                <span>12A Registration</span>
-                <span>80G Registration</span>
-                <span>Annual Returns</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="expertise-card glass-effect-light"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            >
-              <div className="expertise-icon">🌐</div>
-              <h3>FCRA Services</h3>
-              <p>Specialized assistance in FCRA registration and compliance for organizations receiving foreign contributions.</p>
-              <div className="expertise-features">
-                <span>FCRA Registration</span>
-                <span>Compliance</span>
-                <span>Renewals</span>
-              </div>
-            </motion.div>
-          </div>
-        </div>
+            Our Practice Areas
+          </motion.div>
+          <h1>Specialized Legal Services for NGOs</h1>
+          <p>Expert legal solutions tailored for non-profit organizations</p>
+        </motion.div>
       </section>
 
-      <section className="process-section section-dark">
+      <section className="areas-section section-light">
         <div className="practice-container">
-          <motion.h2
+          <motion.div 
+            className="section-header"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Our Process
-          </motion.h2>
-          <div className="process-grid">
-            {processSteps.map((step, index) => (
+            <span className="section-badge">What We Do</span>
+            <h2>Our Practice Areas</h2>
+            <p>Comprehensive legal services for non-profit organizations</p>
+          </motion.div>
+
+          <div className="areas-grid">
+            {practiceAreas.map((area, index) => (
               <motion.div
                 key={index}
-                className="process-card glass-effect-dark"
-                initial={{ opacity: 0, y: 20 }}
+                className="area-card glass-effect-light"
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                whileHover={{ y: -10, transition: { duration: 0.2 } }}
               >
-                <div className="step-number">{step.number}</div>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
+                <div className="area-icon">{area.icon}</div>
+                <h3>{area.title}</h3>
+                <p>{area.description}</p>
+                <ul className="services-list">
+                  {area.services.map((service, idx) => (
+                    <motion.li
+                      key={idx}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: (index * 0.1) + (idx * 0.1) }}
+                    >
+                      {service}
+                    </motion.li>
+                  ))}
+                </ul>
+                <motion.button
+                  className="learn-more-btn"
+                  whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0, 102, 204, 0.3)" }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Learn More
+                </motion.button>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="consultation-section section-light">
+      <section className="expertise-section section-dark">
         <div className="practice-container">
-          <motion.div
-            className="consultation-content glass-effect-light"
+          <motion.div 
+            className="section-header"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2>Need Legal Assistance?</h2>
-            <p>Get expert guidance for your NGO/NPO legal requirements</p>
+            <span className="section-badge">Why Choose Us</span>
+            <h2>Our Expertise</h2>
+            <p>What sets us apart in NGO legal services</p>
+          </motion.div>
+
+          <div className="expertise-grid">
+            {expertise.map((item, index) => (
+              <motion.div
+                key={index}
+                className="expertise-card glass-effect-dark"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="expertise-icon">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="cta-section section-light">
+        <div className="practice-container">
+          <motion.div 
+            className="cta-content glass-effect-light"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2>Ready to Get Started?</h2>
+            <p>Let us help you establish and manage your NGO legally</p>
             <div className="cta-buttons">
               <motion.button 
-                className="consultation-btn primary"
+                className="cta-btn primary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Schedule a Consultation
+                Schedule Consultation
               </motion.button>
               <motion.button 
-                className="consultation-btn secondary"
+                className="cta-btn secondary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

@@ -1,10 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import ServiceHero from './components/ServiceHero';
 import './Services.css';
 
 const Services = () => {
-  const services = [
+  const mainServices = [
     {
       title: "NGO Registration",
       description: "Complete assistance in NGO registration under various acts",
@@ -55,57 +54,57 @@ const Services = () => {
     }
   ];
 
-  const benefits = [
-    {
-      title: "Expert Guidance",
-      description: "Professional legal support from experienced consultants",
-      icon: "👥"
-    },
-    {
-      title: "Timely Service",
-      description: "Quick and efficient processing of all registrations",
-      icon: "⏱️"
-    },
-    {
-      title: "Complete Support",
-      description: "End-to-end assistance in documentation and compliance",
-      icon: "✅"
-    },
-    {
-      title: "Cost Effective",
-      description: "Transparent pricing and value for money services",
-      icon: "💎"
-    }
-  ];
-
   return (
     <div className="services-page">
-      <ServiceHero />
+      <section className="services-hero section-dark">
+        <div className="hero-overlay"></div>
+        <motion.div 
+          className="services-hero-content"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div 
+            className="hero-badge"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            Our Services
+          </motion.div>
+          <h1>Comprehensive NGO Legal Solutions</h1>
+          <p>Expert legal services tailored for non-profit organizations</p>
+        </motion.div>
+      </section>
 
-      <section className="services-section section-light">
+      <section className="main-services section-light">
         <div className="services-container">
-          <motion.h2
+          <motion.div 
+            className="section-header"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Our Services
-          </motion.h2>
+            <span className="section-badge">What We Offer</span>
+            <h2>Our Core Services</h2>
+            <p>Specialized legal solutions for every stage of your NGO journey</p>
+          </motion.div>
+
           <div className="services-grid">
-            {services.map((service, index) => (
+            {mainServices.map((service, index) => (
               <motion.div
                 key={index}
                 className="service-card glass-effect-light"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                whileHover={{ y: -10, transition: { duration: 0.2 } }}
               >
                 <div className="service-icon">{service.icon}</div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                <ul className="features-list">
+                <ul className="service-features">
                   {service.features.map((feature, idx) => (
                     <motion.li
                       key={idx}
@@ -120,7 +119,7 @@ const Services = () => {
                 </ul>
                 <motion.button
                   className="learn-more-btn"
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0, 102, 204, 0.3)" }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Learn More
@@ -131,40 +130,49 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="benefits-section section-dark">
+      <section className="service-process section-dark">
         <div className="services-container">
-          <motion.h2
+          <motion.div 
+            className="section-header"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Why Choose Us
-          </motion.h2>
-          <div className="benefits-grid">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                className="benefit-card glass-effect-dark"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
-              >
-                <div className="benefit-icon">{benefit.icon}</div>
-                <h3>{benefit.title}</h3>
-                <p>{benefit.description}</p>
-              </motion.div>
-            ))}
+            <span className="section-badge">How We Work</span>
+            <h2>Our Process</h2>
+            <p>Simple and efficient process to get your NGO registered</p>
+          </motion.div>
+
+          <div className="process-steps">
+            <div className="step">
+              <div className="step-number">01</div>
+              <h3>Initial Consultation</h3>
+              <p>Free consultation to understand your requirements</p>
+            </div>
+            <div className="step">
+              <div className="step-number">02</div>
+              <h3>Documentation</h3>
+              <p>Preparation of all necessary legal documents</p>
+            </div>
+            <div className="step">
+              <div className="step-number">03</div>
+              <h3>Registration</h3>
+              <p>Filing and processing of registration</p>
+            </div>
+            <div className="step">
+              <div className="step-number">04</div>
+              <h3>Compliance Setup</h3>
+              <p>Setting up compliance frameworks</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="consultation-section section-light">
+      <section className="cta-section section-light">
         <div className="services-container">
-          <motion.div
-            className="consultation-content glass-effect-light"
-            initial={{ opacity: 0, y: 20 }}
+          <motion.div 
+            className="cta-content glass-effect-light"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
@@ -172,18 +180,18 @@ const Services = () => {
             <p>Let us help you navigate the legal landscape of non-profit organizations</p>
             <div className="cta-buttons">
               <motion.button 
-                className="consultation-btn primary"
+                className="cta-btn primary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Schedule Consultation
               </motion.button>
               <motion.button 
-                className="consultation-btn secondary"
+                className="cta-btn secondary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Download Brochure
+                View All Services
               </motion.button>
             </div>
           </motion.div>
@@ -193,4 +201,4 @@ const Services = () => {
   );
 };
 
-export default Services; 
+export default Services;

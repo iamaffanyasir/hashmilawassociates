@@ -2,89 +2,150 @@
   min-height: 100vh;
 }
 
-.services-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
+/* Hero Section */
+.services-hero {
+  min-height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+              url('../../assets/images/law-office.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-/* Services Section */
-.services-section {
-  padding: 100px 0;
-}
-
-.services-section h2 {
+.services-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
   text-align: center;
+  padding: 0 20px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(0, 102, 204, 0.1);
+  border: 1px solid rgba(0, 102, 204, 0.3);
+  border-radius: 20px;
+  color: var(--primary);
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.services-hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.services-hero-content p {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Main Services Section */
+.main-services {
+  padding: 120px 0;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(0, 102, 204, 0.1);
+  border: 1px solid rgba(0, 102, 204, 0.3);
+  border-radius: 20px;
+  color: var(--primary);
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.section-header h2 {
   font-size: 2.8rem;
-  margin-bottom: 60px;
-  background: linear-gradient(135deg, #fff, #ccc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
 }
 
 .service-card {
-  padding: 40px;
+  padding: 50px 40px;
   border-radius: 20px;
-  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.3);
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .service-icon {
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin-bottom: 25px;
-  text-align: center;
 }
 
 .service-card h3 {
   font-size: 1.8rem;
-  color: var(--primary);
+  color: #fff;
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .service-card p {
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.8;
   font-size: 1.1rem;
-  margin-bottom: 25px;
-  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin-bottom: 30px;
 }
 
-.features-list {
+.service-features {
   list-style: none;
   margin-bottom: 30px;
   flex-grow: 1;
 }
 
-.features-list li {
+.service-features li {
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 12px;
   padding-left: 25px;
   position: relative;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
-.features-list li::before {
+.service-features li::before {
   content: '→';
   position: absolute;
   left: 0;
   color: var(--primary);
-  transition: transform 0.3s ease;
-}
-
-.features-list li:hover::before {
-  transform: translateX(5px);
 }
 
 .learn-more-btn {
@@ -93,86 +154,87 @@
   border: 1px solid var(--primary);
   color: var(--primary);
   border-radius: 8px;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 1rem;
-  margin-top: auto;
+  align-self: flex-start;
 }
 
-.learn-more-btn:hover {
-  background: var(--primary);
-  color: white;
+/* Process Section */
+.service-process {
+  padding: 120px 0;
+  background: var(--section-darker);
 }
 
-/* Benefits Section */
-.benefits-section {
-  padding: 100px 0;
-}
-
-.benefits-section h2 {
-  text-align: center;
-  font-size: 2.8rem;
-  margin-bottom: 60px;
-  color: #fff;
-}
-
-.benefits-grid {
+.process-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+  margin-top: 60px;
 }
 
-.benefit-card {
-  padding: 40px;
-  border-radius: 20px;
+.step {
   text-align: center;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px 30px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 
-.benefit-icon {
-  font-size: 3rem;
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  width: 30px;
+  height: 2px;
+  background: var(--primary);
+  transform: translateY(-50%);
+}
+
+.step-number {
+  font-size: 2.5rem;
+  color: var(--primary);
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
-.benefit-card h3 {
-  font-size: 1.4rem;
-  color: var(--primary);
+.step h3 {
+  font-size: 1.5rem;
+  color: #fff;
   margin-bottom: 15px;
 }
 
-.benefit-card p {
+.step p {
   color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
   line-height: 1.6;
 }
 
-/* Consultation Section */
-.consultation-section {
-  padding: 100px 0;
+/* CTA Section */
+.cta-section {
+  padding: 120px 0;
 }
 
-.consultation-content {
+.cta-content {
   text-align: center;
   padding: 60px 40px;
   border-radius: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.3);
 }
 
-.consultation-content h2 {
+.cta-content h2 {
   font-size: 2.8rem;
-  margin-bottom: 20px;
   color: #fff;
+  margin-bottom: 20px;
 }
 
-.consultation-content p {
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 30px;
+.cta-content p {
   font-size: 1.2rem;
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin: 0 auto 40px;
 }
 
 .cta-buttons {
@@ -181,59 +243,81 @@
   justify-content: center;
 }
 
-.consultation-btn {
+.cta-btn {
   padding: 15px 30px;
-  font-size: 1.1rem;
   border-radius: 8px;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.cta-btn.primary {
+  background: var(--primary);
+  color: white;
   border: none;
 }
 
-.consultation-btn.primary {
-  background: var(--primary);
-  color: white;
-}
-
-.consultation-btn.secondary {
+.cta-btn.secondary {
   background: transparent;
-  color: white;
   border: 1px solid var(--primary);
+  color: white;
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .step:nth-child(2)::after {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
-  .services-section,
-  .benefits-section,
-  .consultation-section {
-    padding: 60px 0;
+  .services-hero {
+    min-height: 50vh;
+    padding: 80px 20px;
   }
 
-  .services-section h2,
-  .benefits-section h2,
-  .consultation-content h2 {
+  .services-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-header h2 {
     font-size: 2.2rem;
-    margin-bottom: 40px;
   }
 
-  .service-card,
-  .benefit-card {
-    padding: 30px;
+  .main-services,
+  .service-process,
+  .cta-section {
+    padding: 80px 0;
   }
 
-  .service-icon {
-    font-size: 3rem;
+  .service-card {
+    padding: 40px 30px;
   }
 
-  .service-card h3 {
-    font-size: 1.5rem;
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .step::after {
+    display: none;
   }
 
   .cta-buttons {
     flex-direction: column;
   }
 
-  .consultation-content {
-    padding: 40px 20px;
+  .cta-btn {
+    width: 100%;
   }
-} 
+}

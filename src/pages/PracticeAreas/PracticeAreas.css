@@ -4,99 +4,299 @@
 
 /* Hero Section */
 .practice-hero {
-  height: 60vh;
+  min-height: 60vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  position: relative;
+  padding: 120px 20px;
   overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+              url('../../assets/images/law-office.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.practice-hero::before {
+.practice-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(0, 102, 204, 0.1);
+  border: 1px solid rgba(0, 102, 204, 0.3);
+  border-radius: 20px;
+  color: var(--primary);
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.practice-hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.practice-hero-content p {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Practice Areas Section */
+.areas-section {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Add subtle background effect */
+.areas-section::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(rgba(21, 19, 32, 0.85), rgba(21, 19, 32, 0.95)),
-              url('../../assets/images/law-office.jpg');
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
-  filter: brightness(0.8);
+  background: radial-gradient(circle at top right, 
+    rgba(0, 102, 204, 0.05) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
 }
 
-.practice-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
+.practice-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.practice-hero h1 {
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #fff, #ccc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: 700;
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  width: 100%;
+  max-width: 800px;
 }
 
-.practice-hero p {
-  font-size: 1.4rem;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2rem;
-  line-height: 1.6;
+.section-badge {
+  display: inline-block;
+  padding: 12px 24px;  /* Increased padding */
+  background: rgba(0, 102, 204, 0.1);
+  border: 1px solid rgba(0, 102, 204, 0.3);
+  border-radius: 25px;  /* More rounded */
+  color: var(--primary);
+  font-size: 1rem;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
 }
 
-.hero-cta-btn {
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
+.section-header h2 {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 350px));
+  gap: 30px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.area-card {
+  padding: 35px 25px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Add hover effect */
+.area-card:hover {
+  transform: translateY(-10px);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Add subtle border gradient */
+.area-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.area-card:hover::before {
+  opacity: 1;
+}
+
+.area-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: rgba(0, 102, 204, 0.1);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.area-card:hover .area-icon {
+  transform: scale(1.1);
+  background: rgba(0, 102, 204, 0.2);
+}
+
+.area-card h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  position: relative;
+}
+
+/* Add underline effect */
+.area-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
   background: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 8px;
+  transition: width 0.3s ease;
+}
+
+.area-card:hover h3::after {
+  width: 100px;
+}
+
+.area-card p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  max-width: 250px;
+}
+
+.services-list {
+  list-style: none;
+  margin-bottom: 20px;
+  padding: 0;
+  width: 100%;
+}
+
+.services-list li {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+  padding-left: 18px;
+  position: relative;
+  font-size: 0.9rem;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.services-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  transition: transform 0.3s ease;
+}
+
+.services-list li:hover {
+  color: rgba(255, 255, 255, 0.95);
+  padding-left: 35px;
+}
+
+.services-list li:hover::before {
+  transform: translateX(5px);
+}
+
+.learn-more-btn {
+  padding: 12px 24px;
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 12px;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  align-self: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-top: auto;
+}
+
+.learn-more-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
 }
 
 /* Expertise Section */
 .expertise-section {
-  padding: 100px 0;
-  background: var(--dark-100);
-  position: relative;
-}
-
-.expertise-section h2 {
-  text-align: center;
-  font-size: 2.8rem;
-  margin-bottom: 60px;
-  background: linear-gradient(135deg, #fff, #ccc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  padding: 120px 0;
+  background: var(--section-darker);
 }
 
 .expertise-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
 }
 
 .expertise-card {
-  padding: 40px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
   text-align: center;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 50px 40px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.expertise-card:hover {
+  transform: translateY(-10px);
 }
 
 .expertise-icon {
@@ -105,113 +305,40 @@
 }
 
 .expertise-card h3 {
-  font-size: 1.8rem;
-  color: var(--primary);
-  margin-bottom: 20px;
-}
-
-.expertise-card p {
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.8;
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-}
-
-.expertise-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin-top: auto;
-}
-
-.expertise-features span {
-  background: rgba(124, 58, 237, 0.1);
-  color: var(--primary);
-  padding: 6px 12px;
-  border-radius: 15px;
-  font-size: 0.9rem;
-  border: 1px solid rgba(124, 58, 237, 0.2);
-}
-
-/* Process Section */
-.process-section {
-  padding: 100px 0;
-  background: var(--dark-200);
-}
-
-.practice-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.process-section h2 {
-  text-align: center;
-  font-size: 2.8rem;
-  margin-bottom: 60px;
-  color: #fff;
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.process-card {
-  padding: 40px;
-  border-radius: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.step-number {
-  font-size: 3rem;
-  color: var(--primary);
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.process-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #fff;
   margin-bottom: 15px;
 }
 
-.process-card p {
+.expertise-card p {
   color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1.1rem;
 }
 
-/* Consultation Section */
-.consultation-section {
-  padding: 100px 0;
+/* CTA Section */
+.cta-section {
+  padding: 120px 0;
 }
 
-.consultation-content {
+.cta-content {
   text-align: center;
-  padding: 60px 40px;
+  padding: 80px 40px;
   border-radius: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.3);
 }
 
-.consultation-content h2 {
+.cta-content h2 {
   font-size: 2.8rem;
-  margin-bottom: 20px;
   color: #fff;
+  margin-bottom: 20px;
 }
 
-.consultation-content p {
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 30px;
+.cta-content p {
   font-size: 1.2rem;
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto 40px;
 }
 
 .cta-buttons {
@@ -220,71 +347,96 @@
   justify-content: center;
 }
 
-.consultation-btn {
+.cta-btn {
   padding: 15px 30px;
-  font-size: 1.1rem;
   border-radius: 8px;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.cta-btn.primary {
+  background: var(--primary);
+  color: white;
   border: none;
 }
 
-.consultation-btn.primary {
-  background: var(--primary);
-  color: white;
-}
-
-.consultation-btn.secondary {
+.cta-btn.secondary {
   background: transparent;
-  color: white;
   border: 1px solid var(--primary);
+  color: white;
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .areas-grid {
+    grid-template-columns: repeat(3, minmax(280px, 330px));
+    gap: 25px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .areas-grid {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    max-width: 800px;
+  }
+}
+
 @media (max-width: 768px) {
   .practice-hero {
-    height: 50vh;
+    min-height: 50vh;
+    padding: 80px 20px;
   }
 
-  .practice-hero h1 {
-    font-size: 2.8rem;
+  .practice-hero-content h1 {
+    font-size: 2.5rem;
   }
 
-  .practice-hero p {
+  .practice-hero-content p {
     font-size: 1.1rem;
   }
 
+  .areas-section,
   .expertise-section,
-  .process-section,
-  .consultation-section {
-    padding: 60px 0;
+  .cta-section {
+    padding: 80px 0;
   }
 
-  .expertise-section h2,
-  .process-section h2,
-  .consultation-content h2 {
+  .section-header {
+    margin-bottom: 60px;
+  }
+
+  .section-header h2 {
     font-size: 2.2rem;
-    margin-bottom: 40px;
   }
 
-  .expertise-card,
-  .process-card {
-    padding: 30px;
+  .areas-grid,
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
-  .expertise-icon {
-    font-size: 3rem;
-  }
-
-  .expertise-card h3 {
-    font-size: 1.5rem;
+  .area-card,
+  .expertise-card {
+    padding: 40px 30px;
   }
 
   .cta-buttons {
     flex-direction: column;
   }
 
-  .consultation-content {
-    padding: 40px 20px;
+  .cta-btn {
+    width: 100%;
+  }
+
+  .area-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 2.8rem;
+  }
+
+  .area-card h3 {
+    font-size: 1.8rem;
   }
 } 
